@@ -1,0 +1,68 @@
+{
+    "doctors": [{
+            "id": 1,
+            "firstName": "Hakkı",
+            "lastName": "Bulut",
+            "phoneNumber": "05536549871",
+            "address": "İstanbul/Pendik"
+        },
+        {
+            "id": 2,
+            "firstName": "Osman",
+            "lastName": "Yıldırım",
+            "phoneNumber": "05559632587",
+            "address": "İstanbul/Avcılar"
+        },
+        {
+            "id": 3,
+            "firstName": "Simge",
+            "lastName": "Çakır",
+            "phoneNumber": "05467418563",
+            "address": "İstanbul/Kartal"
+        }
+    ],
+    "patients": [{
+            "id": 1,
+            "firstName": "Kübra",
+            "lastName": "Demir",
+            "insuranceNo": 558844,
+            "phoneNumber": "05329631567",
+            "address": "istanbul/Maltepe"
+        },
+        {
+            "id": 2,
+            "firstName": "Elif",
+            "lastName": "Öztürk",
+            "insuranceNo": 558844,
+            "phoneNumber": "05537891935",
+            "address": "istanbul/avcılar"
+        },
+        {
+            "id": 3,
+            "firstName": "Fatih",
+            "lastName": "Aksakallı",
+            "insuranceNo": 558844,
+            "phoneNumber": "05824563217",
+            "address": "istanbul/Bahçelievler"
+        }
+    ],
+    "appointments": [{
+            "id": 1,
+            "doctorName": "Hakkı Bulut",
+            "patientName": "Elif Öztürk",
+            "appoinmentDate": "261120191212"
+        },
+        {
+            "id": 2,
+            "doctorName": "Osman Yıldrım",
+            "patientName": "Fatih Aksakallı",
+            "appoinmentDate": "55533332222"
+        },
+        {
+            "id": 3,
+            "doctorName": "Simge Çakır",
+            "patientName": "Kübra Demir",
+            "appoinmentDate": "55533332222"
+        }
+    ]
+}
