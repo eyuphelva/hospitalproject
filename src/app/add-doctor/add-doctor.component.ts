@@ -12,37 +12,51 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddDoctorComponent implements OnInit {
   angForm: FormGroup
-  doctors:any;
+  doctors: any;
   selectedDoctor: any;
-  constructor(private fb: FormBuilder, public router: Router,private route: ActivatedRoute) { 
+  constructor(private fb: FormBuilder, public router: Router, private route: ActivatedRoute) {
     this.createForm();
     this.doctors = hospitalData.doctors;
-  
+    this.selectedDoctor = parseInt(this.route.snapshot.paramMap.get('id'));
+    console.log(this.selectedDoctor);
+
+    if (this.selectedDoctor) {
+      this.selectedDoctor = this.doctors.find(field => field.id === this.selectedDoctor);
+   
+      this.createForm(this.selectedDoctor);
+
+    }else {
+      this.createForm();
+    }
+   
+
   }
 
   ngOnInit() {
-    this.selectedDoctor = this.route.snapshot.paramMap.get('id');
-    console.log(this.selectedDoctor);
-   
-    if(this.selectedDoctor){
-      let sd = this.doctors.find(field =>{
-         field.id === this.selectedDoctor});
-      console.log(sd);
 
-    }
   }
-  createForm() {
+  createForm(selectedDoctor?:any) {
     this.angForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      phoneNumber: [''],
-      address: ['']
+      firstName: [selectedDoctor ? selectedDoctor.firstName : ''],
+      lastName: [selectedDoctor ? selectedDoctor.lastName : ''],
+      phoneNumber: [selectedDoctor ? selectedDoctor.phoneNumber : ''],
+      address: [selectedDoctor ? selectedDoctor.address : '']
     });
+    
   }
-  onClickSubmit(formData) {
-    this.doctors.push(formData);
-    this.router.navigate(['/doctors']);
+  onClickSubmit(formData: any) {
+
+    if(this.selectedDoctor){
+      this.selectedDoctor.firstName=formData.firstName;
+      this.selectedDoctor.lastName=formData.lastName;
+      this.selectedDoctor.address=formData.address;
+
+    }else{
+      this.doctors.push(formData);
+    }
   
- }
+    this.router.navigate(['/doctors']);
+
+  }
 
 }
