@@ -1,0 +1,29 @@
+<div class="container">
+    <a [routerLink]="['/create-appointment']" routerLinkActive="router-link-active" class="btn btn-info mb-1">Randevu Oluştur</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Doktor İsmi</th>
+                <th scope="col">Hasta İsmi</th>
+                <th scope="col">Tarih</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments; let i = index">
+                <td>{{appointment.doctorName}} </td>
+                <td>{{appointment.patientName}} </td>
+                <td>{{appointment.appoinmentDate | date:"short"}} </td>
+
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <button (click)="deleteAppointment(i)" type="button" class="btn btn-danger">Sil</button>
+
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

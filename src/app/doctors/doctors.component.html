@@ -1,0 +1,29 @@
+<div class="container">
+    <a [routerLink]="['/add-doctor']" routerLinkActive="router-link-active" class="btn btn-info mb-1">Doktor Ekle</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">İsim</th>
+                <th scope="col">Soyisim</th>
+                <th scope="col">Telefon Numarası</th>
+                <th scope="col">Adres</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of doctors; let i = index">
+                <td>{{doctor.firstName}} </td>
+                <td>{{doctor.lastName}} </td>
+                <td>{{doctor.phoneNumber}}</td>
+                <td>{{doctor.address}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="deleteDoctor(i)" type="button" class="btn btn-danger">Sil</button>
+
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

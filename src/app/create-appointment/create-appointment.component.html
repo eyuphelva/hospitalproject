@@ -1,0 +1,43 @@
+<div class="container">
+    <form (ngSubmit)="onClickSubmit(angForm.value)" [formGroup]="angForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="sel1">Doktor Seçiniz</label>
+                    <select formControlName="doctorName" class="form-control" id="sel1">
+                        <option disabled></option>
+                        <option *ngFor="let doctor of doctors; let i= index">{{doctor.firstName}}
+                            {{doctor.lastName}} </option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="sel1">Hasta Seçiniz</label>
+                    <select formControlName="patientName" class="form-control" id="sel1">
+                        <option disabled></option>
+                        <option *ngFor="let patient of patients; let i= index">{{patient.firstName}}
+                            {{patient.lastName}} </option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="exampleInputtext1">Randevu Tarihi</label>
+                    <input formControlName="appoinmentDate" type="datetime-local" class="form-control" id="exampleInputtext1">
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Randevu Oluştur</button>
+    </form>
+</div>
+
+<!-- {{angForm.value | json}} -->

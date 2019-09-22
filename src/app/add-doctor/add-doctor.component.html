@@ -1,0 +1,43 @@
+<div class="container">
+    <form (ngSubmit)="onClickSubmit(angForm.value) " [formGroup]="angForm">
+        <div class="row ">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="exampleInputtext1">İsim</label>
+                    <input formControlName="firstName" type="text" class="form-control" id="exampleInputtext1" placeholder="Enter text">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="exampleInputtext1">Soyisim</label>
+                    <input formControlName="lastName" type="text" class="form-control" id="exampleInputtext1" placeholder="Enter text">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="exampleInputtext1">Telefon numarası</label>
+                    <input formControlName="phoneNumber" type="text" class="form-control" id="exampleInputtext1" placeholder="Enter text">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="exampleInputtext1">Adres</label>
+                    <input formControlName="address" type="text" class="form-control" id="exampleInputtext1" placeholder="Enter text">
+
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary px-4">Ekle</button>
+    </form>
+</div>
+
+<!-- {{angForm.value | json}} -->
