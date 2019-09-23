@@ -3,8 +3,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Doktor İsmi</th>
-                <th scope="col">Hasta İsmi</th>
+                <th scope="col">Doktor Adı</th>
+                <th scope="col">Hasta Adı</th>
                 <th scope="col">Tarih</th>
 
             </tr>
@@ -17,7 +17,7 @@
 
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-
+                        <a class="btn btn-info" routerLink="/create-appointment/{{appointment.id}}">Düzenle </a> &nbsp;
                         <button (click)="deleteAppointment(i)" type="button" class="btn btn-danger">Sil</button>
 
                     </div>

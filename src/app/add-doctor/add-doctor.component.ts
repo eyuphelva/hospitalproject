@@ -18,7 +18,7 @@ export class AddDoctorComponent implements OnInit {
     this.createForm();
     this.doctors = hospitalData.doctors;
     this.selectedDoctor = parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log(this.selectedDoctor);
+    // console.log(this.selectedDoctor);
 
     if (this.selectedDoctor) {
       this.selectedDoctor = this.doctors.find(field => field.id === this.selectedDoctor);
@@ -49,6 +49,7 @@ export class AddDoctorComponent implements OnInit {
     if(this.selectedDoctor){
       this.selectedDoctor.firstName=formData.firstName;
       this.selectedDoctor.lastName=formData.lastName;
+      this.selectedDoctor.phoneNumber=formData.phoneNumber;
       this.selectedDoctor.address=formData.address;
 
     }else{

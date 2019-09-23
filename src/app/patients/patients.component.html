@@ -4,8 +4,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">İsim</th>
-                <th scope="col">Soyisim</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Soyad</th>
                 <th scope="col">Sigorta Numarası</th>
                 <th scope="col">Telefon Numarası</th>
                 <th scope="col">Adres</th>
@@ -21,6 +21,7 @@
                 <td>{{patient.address}}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-info" routerLink="/add-patient/{{patient.id}}">Düzenle </a> &nbsp;
 
                         <button (click)="deletePatient(i)" type="button" class="btn btn-danger">Sil</button>
 
